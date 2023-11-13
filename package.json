@@ -1,7 +1,20 @@
 {
-  "name": "frontend",
+  "name": "mathech-frontend",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/bsmcs-4a-thesis/thesis_frontend.git"
+  },
+  "keywords": [
+    "mathech"
+  ],
+  "author": {
+    "name": "Lourd Nathaniel S. Gonzalez",
+    "email": "gonzalez.lourdnathaniel@gmail.com",
+    "url": "https://lng-webportfolio.vercel.app/"
+  },
+  "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
