@@ -1,8 +1,17 @@
+import UserContext from "../UserContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
 import { Button, Container, Image, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
 export default function AppNavbar() {
+    const { user, setUser } = useContext(UserContext);
+
+    const logout = () => {
+        localStorage.clear();
+        setUser({id: null});
+    }
+
     return (
         <Navbar expand="md" className="mathech-bg-primary">
             <Container>
@@ -20,8 +29,15 @@ export default function AppNavbar() {
                     </Nav>
 
                     <Nav className="ms-auto gap-2 user-controls">
+                    {user.id !== null
+                    ?
+                        <Button type="button" variant="danger" onClick={logout}>Logout</Button>
+                    :
+                    <>
                         <Button as={Link} to="/login" variant="info">Login</Button>
                         <Button as={Link} to="/signup" variant="outline-info">Sign Up</Button>
+                    </>
+                    }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
