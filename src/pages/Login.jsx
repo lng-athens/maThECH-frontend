@@ -8,8 +8,8 @@ export default function Login() {
             <Row className="justify-content-center">
                 <Col md={8} lg={6}>
                     <h3 className="title">Login</h3>
-                    <Container className="border-2 form-container p-3">
-                        <Form>
+                    <Form>
+                        <Container className="border-2 form-container p-3">
                             <FloatingLabel controlId="userId" label="Email" className="mb-3">
                                 <Form.Control type="email" placeholder="Email" />
                             </FloatingLabel>
@@ -18,20 +18,20 @@ export default function Login() {
                                 <Form.Control type="password" placeholder="Password" />
                             </FloatingLabel>
 
-                            <FloatingLabel controlId="role" label="Role" className="mb-5">
+                            <FloatingLabel controlId="role" label="Role">
                                 <Form.Select aria-label="Select role">
                                     <option disabled>Select role...</option>
                                     <option value="student">Student</option>
                                     <option value="teacher">Teacher</option>
                                 </Form.Select>
                             </FloatingLabel>
-                        </Form>
+                        </Container>
 
-                        <Stack direction="horizontal" gap="2" className="justify-content-center">
+                        <Stack direction="horizontal" gap="2" className="justify-content-end mt-3">
                             <Button type="submit" variant="primary" className="w-25">Login</Button>
                             <Button type="button" as={Link} to="/signup" variant="outline-primary" className="w-25">Sign Up</Button>
                         </Stack>
-                    </Container>
+                    </Form>
                 </Col>
             </Row>
         </Container>
