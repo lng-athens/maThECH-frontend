@@ -12,6 +12,13 @@
 /* Fonts: End */
 
 /* Reset: Start */
+:root {
+    --mathech-color-primary: #008000;
+    --mathech-color-secondary: #002366;
+    --mathech-color-tertiary: #9ec5ab;
+    --mathech-color-quaternary: #01200f;
+    --mathech-color-quinary: #011502;
+}
 * {
     margin: 0;
     padding: 0;
@@ -52,4 +59,47 @@ img {
 	-o-user-drag: none;
 	pointer-events: none;
 }
+
+.mathech-bg-primary {background-color: var(--mathech-color-primary) !important;}
+.mathech-bg-secondary {background-color: var(--mathech-color-secondary) !important;}
+.mathech-bg-tertiary {background-color: var(--mathech-color-tertiary) !important;}
+.mathech-bg-quaternary {background-color: var(--mathech-color-quaternary) !important;}
+.mathech-bg-quinary {background-color: var(--mathech-color-quinary) !important;}
+
+.mathech-fc-primary {color: var(--mathech-color-primary) !important;}
+.mathech-fc-secondary {color: var(--mathech-color-secondary) !important;}
+.mathech-fc-tertiary {color: var(--mathech-color-tertiary) !important;}
+.mathech-fc-quaternary {color: var(--mathech-color-quaternary) !important;}
+.mathech-fc-quinary {color: var(--mathech-color-quinary) !important;}
+
+.mathech-fc-hover-primary {color: var(--mathech-color-primary) !important;}
+.mathech-fc-hover-secondary {color: var(--mathech-color-secondary) !important;}
+.mathech-fc-hover-tertiary {color: var(--mathech-color-tertiary) !important;}
+.mathech-fc-hover-quaternary {color: var(--mathech-color-quaternary) !important;}
+.mathech-fc-hover-quinary {color: var(--mathech-color-quinary) !important;}
+
+.mathech-border-primary {border-color: var(--mathech-color-primary) !important;}
+.mathech-border-secondary {border-color: var(--mathech-color-secondary) !important;}
+.mathech-border-tertiary {border-color: var(--mathech-color-tertiary) !important;}
+.mathech-border-quaternary {border-color: var(--mathech-color-quaternary) !important;}
+.mathech-border-quinary {border-color: var(--mathech-color-quinary) !important;}
 /* Reset: End */
+
+/* Navbar: Start */
+.navbar-nav .nav-link {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 900;
+    color: #ffffff;
+}
+.navbar-nav .nav-link:hover {
+    color: #cccccc;
+}
+.navbar-nav .nav-link.active {
+    color: var(--mathech-color-tertiary) !important;
+}
+
+.navbar-nav.user-controls .btn {
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 600;
+}
+/* Navbar: End */
