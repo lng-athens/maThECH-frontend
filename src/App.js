@@ -3,7 +3,7 @@ import { UserProvider } from './UserContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 
-/* Main Navigation: Start */
+// Main Navigation: Start
 import AppNavbar from './components/AppNavbar';
 import AppFooter from './components/AppFooter';
 
@@ -12,7 +12,11 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-/* Main Navigation: End */
+// Main Navigation: End
+
+// Utility Navigation: Start
+import Generator from './pages/Generator';
+// Utility Navigation: End
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -53,12 +57,14 @@ export default function App() {
             <Router>
                 <AppNavbar />
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path='/' element={<Home />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/contact' element={<Contact />} />
 
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<SignUp />} />
+
+                    <Route path='/utility/*' element={<UtilityRoutes />} />
                 </Routes>
                 <AppFooter />
             </Router>
@@ -66,3 +72,11 @@ export default function App() {
         </Fragment>
     );
 };
+
+function UtilityRoutes() {
+    return (
+        <Routes>
+            <Route path='/generator' element={<Generator />} />
+        </Routes>
+    );
+}
