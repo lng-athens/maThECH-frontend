@@ -69,7 +69,7 @@ export default function SignUp() {
     };
 
     return (
-        <Container className="my-3">
+        <Container className="page--signup my-3">
             <Row className="justify-content-center">
                 <Col md={8} lg={6}>
                     <h3 className="title">Sign Up</h3>

@@ -27,6 +27,7 @@ export default function Login() {
         .then(res => res.json())
         .then(data => {
             if (typeof data.access !== "undefined") {
+                console.log('User exist');
                 retrieveUser(data.access);
                 Swal.fire({
                     title: 'Success!',
@@ -35,10 +36,24 @@ export default function Login() {
                 })
                 .then(result =>{
                     if (result.isConfirmed) {
-                        navigate('/');
+                        navigate('/utility/generator');
                     }
                 })
             }
+            else {
+                Swal.fire({
+                    title: 'Failed!',
+                    icon: 'error',
+                    text: data.message
+                });
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                title: 'Error!',
+                icon: 'error',
+                text: error
+            });
         });
     };
 
@@ -61,9 +76,9 @@ export default function Login() {
     return (
         (user.id !== null)
         ?
-        <Navigate to="/" />
+        <Navigate to="/utility/generator" />
         :
-        <Container className="mt-5">
+        <Container className="page--login h-100">
             <Row className="justify-content-center">
                 <Col md={8} lg={6}>
                     <h3 className="title">Login</h3>
