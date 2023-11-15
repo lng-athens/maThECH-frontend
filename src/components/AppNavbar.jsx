@@ -26,7 +26,7 @@ export default function AppNavbar() {
 
                 <Navbar.Collapse id="header-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+                        <Nav.Link as={NavLink} to={user.id === null ? "/" : "/utility/generator"}>Home</Nav.Link>
                         <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                         <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
                     </Nav>
