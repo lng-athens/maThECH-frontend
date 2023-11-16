@@ -28,17 +28,7 @@ export default function Login() {
         .then(data => {
             if (typeof data.access !== "undefined") {
                 console.log('User exist');
-                retrieveUser(data.access);
-                Swal.fire({
-                    title: 'Success!',
-                    icon: 'success',
-                    text: 'Account logged in!'
-                })
-                .then(result =>{
-                    if (result.isConfirmed) {
-                        navigate('/utility/generator');
-                    }
-                })
+                retrieveUser(data.access);                
             }
             else {
                 Swal.fire({
@@ -70,6 +60,11 @@ export default function Login() {
                 id: data._id
             });
             localStorage.setItem("token", token);
+            Swal.fire({
+                title: 'Success!',
+                icon: 'success',
+                text: 'Account logged in!'
+            });
         });
     };
 
