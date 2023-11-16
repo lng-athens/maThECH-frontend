@@ -1,10 +1,12 @@
 import { Button, Col, Container, FloatingLabel, Form, Row, Stack } from "react-bootstrap";
 import "../assets/css/signup.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import UserContext from "../UserContext";
 
 export default function SignUp() {
+    const { user } = useContext(UserContext);
     const navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [middleName, setMiddleName] = useState('');
@@ -69,6 +71,10 @@ export default function SignUp() {
     };
 
     return (
+        (user.id !== null)
+        ?
+        <Navigate to="/utility/generator" />
+        :
         <Container className="page--signup my-3">
             <Row className="justify-content-center">
                 <Col md={8} lg={6}>
