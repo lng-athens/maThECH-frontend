@@ -18,7 +18,7 @@ export default function AppNavbar() {
     return (
         <Navbar expand="md" className="mathech-bg-primary">
             <Container>
-                <Navbar.Brand as={Link} to="/" className="d-inline">
+                <Navbar.Brand as={Link} to={user.id === null ? "/" : "/utility/generator"} className="d-inline">
                     <Image alt="logo" src={process.env.PUBLIC_URL + '/logo512.png'} width={30} height={30} className="d-inline-block align-bottom" />
                 </Navbar.Brand>
 
