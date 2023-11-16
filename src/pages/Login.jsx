@@ -65,6 +65,7 @@ export default function Login() {
                 icon: 'success',
                 text: 'Account logged in!'
             });
+            navigate('/utility/generator');
         });
     };
 
