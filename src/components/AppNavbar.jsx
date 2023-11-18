@@ -19,7 +19,7 @@ export default function AppNavbar() {
         <Navbar expand="md" className="mathech-bg-primary">
             <Container>
                 <Navbar.Brand as={Link} to={user.id === null ? "/" : "/utility/generator"} className="d-inline">
-                    <Image alt="logo" src={process.env.PUBLIC_URL + '/logo512.png'} width={30} height={30} className="d-inline-block align-bottom" />
+                    <Image alt="logo" src={process.env.PUBLIC_URL + '/logo.png'} height={30} className="d-inline-block align-bottom" />
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="header-nav" className="mathech-fc-tertiary mathech-border-tertiary"><FontAwesomeIcon icon="fa-solid fa-bars" /></Navbar.Toggle>
