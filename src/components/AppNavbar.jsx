@@ -28,7 +28,6 @@ export default function AppNavbar() {
                     <Nav className="me-auto">
                         <Nav.Link as={NavLink} to={user.id === null ? "/" : "/utility/generator"}>Home</Nav.Link>
                         <Nav.Link as={NavLink} to="/about">About</Nav.Link>
-                        <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
                     </Nav>
 
                     <Nav className="ms-auto gap-2 user-controls">
