@@ -60,6 +60,15 @@ img {
 	pointer-events: none;
 }
 
+.title {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
 .mathech-bg-primary {background-color: var(--mathech-color-primary) !important;}
 .mathech-bg-secondary {background-color: var(--mathech-color-secondary) !important;}
 .mathech-bg-tertiary {background-color: var(--mathech-color-tertiary) !important;}
@@ -100,15 +109,6 @@ img {
 
 .navbar-nav.user-controls .btn {
     font-family: 'Red Hat Display', sans-serif;
-    font-weight: 600;
-}
-
-.title {
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
-}
-.subtitle {
-    font-family: 'Playfair Display', serif;
     font-weight: 600;
 }
 /* Navbar: End */
