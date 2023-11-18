@@ -1,0 +1,10 @@
+#sidebarNav {
+    background-color: var(--mathech-color-quaternary);
+    overflow: hidden;
+}
+
+#testList .btn {
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-align: left;
+}
