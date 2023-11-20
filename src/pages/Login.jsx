@@ -27,7 +27,6 @@ export default function Login() {
         .then(res => res.json())
         .then(data => {
             if (typeof data.access !== "undefined") {
-                console.log('User exist');
                 retrieveUser(data.access);                
             }
             else {
