@@ -51,8 +51,7 @@ export default function Generator() {
             messages: [
                 { role: "system", content: "You are a helpful assistant" },
                 { role: "user", content: inputQuery },
-            ],
-            stream: true
+            ]
         };
 
         try {
