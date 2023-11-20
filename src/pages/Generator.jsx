@@ -65,17 +65,17 @@ export default function Generator() {
             });
 
             if (!response.ok) {
-                console.error("Error: ", response.statusText);
+                console.error("Error: ", response);
                 return;
             }
 
             const result = await response.json();
 
-            const generatedText = result.choices[0].delta.content;
+            const generatedText = result.choices[0].message.content;
             setOutputResult(generatedText);
         }
         catch (error) {
-            console.error("Error: ", error.message);
+            console.error("Error: ", error);
         }
     };
 
