@@ -8,3 +8,44 @@
     text-wrap: nowrap;
     text-align: left;
 }
+
+#queryResultContainer {
+    width: 100%;
+    z-index: 1;
+}
+@media (min-width: 768px) {
+    #queryResultContainer {
+        width: 75%;
+    }
+}
+
+#queryPage .input--container {
+    background: linear-gradient(to top, #222222, #22222200);
+    z-index: 2;
+}
+#inputContainer .panel-group {
+    width: 90%;
+}
+@media (min-width: 768px) {
+    #inputContainer .panel-group {
+        width: 75%;
+    }
+}
+#queryPage .inpgroup--container {
+    width: 90%;
+}
+@media (min-width: 768px) {
+    #queryPage .inpgroup--container {
+        width: 75%;
+    }
+}
+#queryPage .inpgroup--container .input-group * {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+}
+#queryPage .inpgroup--container .input-group .form-control {
+    resize: none;
+}
