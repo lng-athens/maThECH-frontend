@@ -13,9 +13,20 @@
     width: 100%;
     z-index: 1;
 }
+#queryResultContainer p {
+    max-height: calc(100% - 78px);
+    text-align: justify;
+    overflow-y: auto;
+}
+#queryResultContainer p::-webkit-scrollbar {
+    width: 0.5rem;
+}
 @media (min-width: 768px) {
     #queryResultContainer {
         width: 75%;
+    }
+    #queryResultContainer p {
+        max-height: 500px;
     }
 }
 

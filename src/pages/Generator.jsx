@@ -46,38 +46,37 @@ export default function Generator() {
     const toggleSize = () => {setOpen(!open)};
 
     const handleQueryRequest = async () => {
-        const reqData = {
-            model: 'gpt-3.5-turbo',
-            messages: [
-                { role: "system", content: "You are a helpful assistant" },
-                { role: "user", content: inputQuery },
-            ]
-        };
-
-        try {
-            const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        try{
+            const response = await fetch('https://api.edenai.run/v2/text/generation', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDk3N2FhYzgtN2E0My00MjM5LTg2YmItYWQ1ZGMxOWVjNmQ1IiwidHlwZSI6ImFwaV90b2tlbiJ9.fYMByfYw7nHQ1NpkRx1X9HyLLBGpc9pTLtFbgQ-pjYc'
                 },
-                body: JSON.stringify(reqData),
+                body: JSON.stringify({
+                    show_original_response: false,
+                    fallback_providers: "",
+                    providers: "cohere",
+                    text: inputQuery,
+                    temperature: 0.2,
+                    max_tokens: 250,
+                }),
             });
-
+    
             if (!response.ok) {
-                console.error("Error: ", response);
-                return;
+                throw new Error('EdenAI API request failed');
             }
-
-            const result = await response.json();
-
-            const generatedText = result.choices[0].message.content;
-            setOutputResult(generatedText);
+    
+            const responseData = await response.json();
+            console.log(responseData.cohere);
+            const generatedTextWithBreaks = responseData.cohere.generated_text.replace(/\n/g, '<br>');
+            setOutputResult(generatedTextWithBreaks);
         }
         catch (error) {
-            console.error("Error: ", error);
+            console.error(error);
         }
     };
+    
 
     return (
         (user.id === null)
@@ -103,13 +102,11 @@ export default function Generator() {
 
                 <div id="queryPage" className="m-0 p-0 position-relative" style={{ width: queryPageWidth, transition: 'width ease-in-out 0.3s' }}>
                     <div id="queryResultContainer" className="mx-auto">
-                        <p>
-                            {outputResult}
-                        </p>
+                        <p dangerouslySetInnerHTML={{ __html: outputResult }} className="mt-3"></p>
                     </div>
 
-                    <div id="inputContainer" className="input--container position-absolute w-100 bottom-0">
-                        <Stack direction="horizontal" gap={2} className="panel-group pt-5 pb-3 mx-auto">
+                    <div id="inputContainer" className="input--container position-absolute w-100 bottom-0 pt-5">
+                        <Stack direction="horizontal" gap={2} id="panelGroup" className="panel-group pb-3 mx-auto">
                             <Stack direction="vertical" gap={0} className="inpgroup--container align-items-center">
                                 <InputGroup className="inpgroup--query">
                                     <InputGroup.Text className="align-items-start">Query</InputGroup.Text>
